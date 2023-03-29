@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Statewise Shopify Optimization</title>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </head>
+  <body>
+    <h1>Statewise Shopify Optimization</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+     
+
+      <label for="ad_spend_b">Ad Spend:</label>
+      <input type="number" id="ad_spend" name="ad_spend" step="0.01" min="0" required><br>
+
+      <label for="noaa_api_key">NOAA API Key:</label>
+      <input type="text" id="noaa_api_key" name="noaa_api_key" required><br>
+
+      <label for="cpi_api_key">CPI API Key:</label>
+      <input type="text" id="cpi_api_key" name="cpi_api_key" required><br>
+
+      <label for="access_token">Facebook Access Token:</label>
+      <input type="text" id="access_token" name="access_token" required><br>
+
+      <label for="shopify_api_key">Shopify API Key:</label>
+      <input type="text" id="shopify_api_key" name="shopify_api_key" required><br>
+
+      <label for="shopify_password">Shopify Password:</label>
+      <input type="text" id="shopify_password" name="shopify_password" required><br>
+
+      <label for="shopify_store_url">Shopify Store URL:</label>
+      <input type="text" id="shopify_store_url" name="shopify_store_url" required><br>
+
+      <label for="target_roas">Target ROAS:</label>
+      <input type="number" id="target_roas" name="target_roas" step="0.01" min="0" required><br>
+
+      <label for="budget">Budget:</label>
+      <input type="number" id="budget" name="budget" step="0.01" min="0" required><br>
+
+      <button type="submit">Predict Sales</button>
+    </form>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('form').submit(function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/submit',
+                data: $('form').serialize(),
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+  </body>
+</html>
+
