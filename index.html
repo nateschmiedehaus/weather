@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Ad Spend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">Weather Ad Spend</h1>
+        <div class="row">
+            <form class="col s12" action="/" method="post">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="date" name="date" type="date" class="validate" required>
+                        <label for="date">Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="roas" name="roas" type="number" class="validate" step="any" required>
+                        <label for="roas">Required ROAS</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="total_ad_spend" name="total_ad_spend" type="number" class="validate" step="any" required>
+                        <label for="total_ad_spend">Total Ad Spend</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
